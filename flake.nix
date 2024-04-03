@@ -37,9 +37,9 @@
     nixosConfigurations.hyperv = nixpkgs.lib.nixosSystem {
       specialArgs = inputs;
       modules = [
-        ./hardware-configuration.nix
+        ./hosts/hyperv/hardware-configuration.nix
         ({ config, pkgs, ... }: { nixpkgs.overlays = [overlay-unstable ]; })
-        ./configuration.nix
+        ./hosts/hyperv/configuration.nix
       ];
     };
   };
